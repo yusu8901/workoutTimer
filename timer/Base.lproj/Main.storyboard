@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="gr1-SM-uav">
             <objects>
-                <viewController id="bOX-n9-oJv" sceneMemberID="viewController">
+                <viewController id="bOX-n9-oJv" customClass="settingViewController" customModule="timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g3h-cO-bVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,9 +31,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-bE-NjD">
-                                <rect key="frame" x="49" y="137" width="315" height="155"/>
+                                <rect key="frame" x="11" y="150" width="185" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.88310936788203187" green="0.88310936788203187" blue="0.88310936788203187" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhz-pO-dhK">
+                                <rect key="frame" x="209" y="149" width="185" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88310936790000005" green="0.88310936790000005" blue="0.88310936790000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="RESET"/>
                                 <connections>
-                                    <action selector="reset" destination="BYZ-38-t0r" eventType="touchUpInside" id="OGc-mV-DK0"/>
+                                    <action selector="reset" destination="BYZ-38-t0r" eventType="touchUpInside" id="9R1-57-HkA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpR-bZ-xaN">
@@ -58,27 +66,54 @@
                                     <action selector="startAndStop" destination="BYZ-38-t0r" eventType="touchUpInside" id="G6Y-Wz-kA0"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-rQ-AWT">
-                                <rect key="frame" x="247" y="308" width="177" height="89"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-pb-KX9">
-                                <rect key="frame" x="37" y="308" width="125" height="77"/>
+                                <rect key="frame" x="11" y="287" width="91" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1050280795" green="0.86838163859999995" blue="0.082091140339999993" alpha="0.53111245600000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="10秒"/>
+                                <state key="normal" title="10s"/>
                                 <connections>
-                                    <action selector="plus10" destination="BYZ-38-t0r" eventType="touchUpInside" id="66v-xo-6oT"/>
+                                    <action selector="countplus10" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqe-X3-DDB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-sO-vAy">
+                                <rect key="frame" x="105" y="286" width="91" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1050280795" green="0.86838163859999995" blue="0.082091140339999993" alpha="0.53111245600000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="-10s"/>
+                                <connections>
+                                    <action selector="countminus10" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVO-gl-Cpl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6H-xF-Ysu">
+                                <rect key="frame" x="209" y="287" width="91" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1050280795" green="0.86838163859999995" blue="0.082091140339999993" alpha="0.53111245600000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="10s"/>
+                                <connections>
+                                    <action selector="intervalplus10" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YX-fV-jIs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6k-NA-gNZ">
+                                <rect key="frame" x="303" y="287" width="91" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1050280795" green="0.86838163859999995" blue="0.082091140339999993" alpha="0.53111245600000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="-10s"/>
+                                <connections>
+                                    <action selector="intervalminus10" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfh-d2-ATO"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="SpR-bZ-xaN" id="0x4-re-4NK"/>
-                        <outlet property="label" destination="Z0J-bE-NjD" id="OzE-iJ-Vxm"/>
+                        <outlet property="countlabel" destination="Z0J-bE-NjD" id="HkN-tv-GLa"/>
+                        <outlet property="intervallabel" destination="zhz-pO-dhK" id="vTA-qF-VNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -64,8 +64,7 @@
             intervalbuttonminus10.layer.shadowOffset = CGSize(width: 3, height: 3)
             intervalbuttonminus10.layer.shadowOpacity = 0.3
             intervalbuttonminus10.layer.shadowRadius = 5
-            //最初ラベルを非表示にする
-            //        label.isHidden = true
+            
         }
         
         
@@ -86,6 +85,8 @@
                 start.setTitle("STOP", for: .normal)
                 countlabel.isHidden = false
                 countlabel.frame = CGRect(x: 20, y: 140, width: 374, height: 167)
+                countlabel.font = countlabel.font.withSize(80)
+                intervallabel.font = countlabel.font.withSize(80)
                 intervallabel.isHidden = true
                 worklabel.text = "Work Out!"
                 timelabel.isHidden = true
@@ -179,6 +180,9 @@
             worklabel.text = " "
             timelabel.isHidden = false
             kyukeilabel.isHidden = false
+            countlabel.font = countlabel.font.withSize(70)
+            intervallabel.font = countlabel.font.withSize(70)
+            
             buttonOpen()
             
             if count == defaultcount && interval == defaultinterval {
@@ -194,6 +198,7 @@
             intervallabel.isHidden = false
             countlabel.frame = CGRect(x: 11, y: 150, width: 185, height: 128)
             intervallabel.frame = CGRect(x: 209, y: 149, width: 185, height: 128)
+            
             
         }
         
@@ -242,18 +247,7 @@
             intervalbuttonminus10.isHidden = false
         }
         
-        //    //数値の範囲（1...10という記法）を配列にする
-        //    var dataArray: [Int] = ([Int])(1...200)
-        //
-        //    //PickerViewのコンポーネントの数を決めるメソッド
-        //    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        //        return 1
-        //    }
-        //
-        //    //PickerViewのコンポーネント内の行数を決めるメソッド
-        //    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //        return dataArray.count
-        //    }
+        
         
         
         
